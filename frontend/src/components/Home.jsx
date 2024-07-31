@@ -15,6 +15,7 @@ const Home = () => {
         }
     },[]);
     
+    //custom hooks:
     useOthers(user?._id);
     useGetMyTweets(user?._id);
 
