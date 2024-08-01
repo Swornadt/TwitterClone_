@@ -7,6 +7,7 @@ dotenv.config ({
 
 const isAuthed = async ( req, res, next ) => {
     const token = req.cookies.token;
+    console.log("Token received:", token);
     if (!token) {
         return res.status(401).json({
             message: "User not authenticated.",
@@ -19,6 +20,10 @@ const isAuthed = async ( req, res, next ) => {
         next();
     } catch (error) {
         console.log(error);
+        return res.status(401).json({
+            message: "Invalid token",
+            success: false
+        });
     }
 }
 
