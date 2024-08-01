@@ -13,6 +13,14 @@ dotenv.config({
 databaseConnection();
 const App = express();
 
+// Serve static files from the React app (assuming the build folder is at the root level)
+App.use(express.static(path.join(__dirname, 'build')));
+
+// The catch-all handler
+App.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 //basic middlewares:
 App.use(express.urlencoded({
     extended: true
