@@ -67,7 +67,7 @@ export const Login = async (req,res) => {
             userId: user._id
         }
         const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"});
-        return res.status(201)
+        return res.status(200)
             .cookie("token", token, {expiresIn: "1d", httpOnly: true})
             .json({
                 message: `Welcome back ${user.name}`,
@@ -76,6 +76,10 @@ export const Login = async (req,res) => {
             });
     } catch (error) {
         console.log(error);
+        return res.status(500).json({
+            message: "Server error",
+            success: false
+        });
     }
 }
 
