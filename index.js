@@ -40,5 +40,5 @@ App.use("/api/v1/tweet", tweetRoute);
 
 const PORT = process.env.PORT || 8080
 App.listen(PORT,() => {
-    console.log(`Server listen at port ${PORT}`);
+    console.log(`Server listen at port ${process.env.PORT}`);
 })
