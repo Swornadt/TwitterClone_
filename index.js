@@ -20,16 +20,32 @@ App.use(express.urlencoded({
 }));
 App.use(express.json());
 App.use(cookieParser());
-App.use(express.static('dist'));
+
 const corsOptions = {
     origin: "http://localhost:5173",
     credentials: true
 }
 App.use(cors(corsOptions));
 
+// Serve static files from the React app
+App.use(express.static(path.join(process.cwd(), 'dist')));
+
 //API:
 App.use("/api/v1/user", userRoute);
 App.use("/api/v1/tweet", tweetRoute);
+
+// Catch-all handler for any other route
+App.get('*', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
+});
+
+
+
+//App.use(express.static('dist'));
+
+
+
+
 
 const PORT = process.env.PORT || 8080
 App.listen(PORT,() => {
