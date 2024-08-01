@@ -5,6 +5,7 @@ import databaseConnection from "./config/database.js";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js"
 import tweetRoute from "./routes/tweetRoute.js"
+import path from 'path';
 
 dotenv.config({
     path: ".env"
@@ -14,11 +15,11 @@ databaseConnection();
 const App = express();
 
 // Serve static files from the React app (assuming the build folder is at the root level)
-App.use(express.static(path.join(__dirname, 'build')));
+App.use(express.static(path.join(process.cwd(), 'build'))); // Use process.cwd() instead of __dirname
 
 // The catch-all handler
 App.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'build', 'index.html')); // Use process.cwd() instead of __dirname
 });
 
 //basic middlewares:
