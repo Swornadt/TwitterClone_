@@ -6,6 +6,7 @@ dotenv.config ({
 })
 
 const isAuthed = async ( req, res, next ) => {
+    console.log("Cookies received",req.cookies)
     const token = req.cookies.token;
     console.log("Token received:", token);
     if (!token) {
