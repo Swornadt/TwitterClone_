@@ -14,20 +14,13 @@ dotenv.config({
 databaseConnection();
 const App = express();
 
-// Serve static files from the React app (assuming the build folder is at the root level)
-App.use(express.static(path.join(process.cwd(), 'build'))); // Use process.cwd() instead of __dirname
-
-// The catch-all handler
-App.get('*', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'build', 'index.html')); // Use process.cwd() instead of __dirname
-});
-
 //basic middlewares:
 App.use(express.urlencoded({
     extended: true
 }));
 App.use(express.json());
 App.use(cookieParser());
+App.use(express.static('dist'));
 const corsOptions = {
     origin: "http://localhost:5173",
     credentials: true
