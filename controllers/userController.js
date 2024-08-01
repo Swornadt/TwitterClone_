@@ -67,8 +67,9 @@ export const Login = async (req,res) => {
             userId: user._id
         }
         const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"});
+        //console.log("The token in userController is:", token);
         return res.status(201)
-            .cookie("token", token, {expiresIn: "1d", httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: 'None'})
+            .cookie("token", token, {expiresIn: "1d", httpOnly: true})
             .json({
                 message: `Welcome back ${user.name}`,
                 user,
