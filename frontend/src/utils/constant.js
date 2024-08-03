@@ -1,5 +1,5 @@
-export const USER_API_ENDPOINT = "http://localhost:8080/api/v1/user";
-export const TWEET_API_ENDPOINT = "http://localhost:8080/api/v1/tweet";
+export const USER_API_ENDPOINT = "api/v1/user"; // !!! removed localhost:8080
+export const TWEET_API_ENDPOINT = "api/v1/tweet";
 export const BASE_API_ENDPOINT = "http://localhost:8080/api/v1"
 
 export const timeSince = (timestamp) => {
