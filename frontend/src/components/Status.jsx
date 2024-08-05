@@ -88,7 +88,7 @@ const Status = () => {
         <div className="w-[100%] h-screen border-l border-r border-gray-200">
             <div className="flex ml-2 pb-2">
                 < IoArrowBack size="24px" className="mt-3.5 hover:cursor-pointer hover:bg-gray-200 rounded-full"
-                              onClick={ () => navigate(-1) }/>
+                              onClick={ () => navigate(-2) }/>
                 <h1 className="font-bold text-2xl ml-5 pt-2"> Post </h1>
             </div>
             

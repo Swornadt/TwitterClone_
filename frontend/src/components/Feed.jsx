@@ -6,8 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 const Feed = () => {
     const { tweets } = useSelector(store => store.tweet);
     const dispatch = useDispatch();
+    
+    //Only displaying the tweets that are not replies to other tweets:
+    const displayTweets = (tweets || []).filter( tweet => tweet?.parentTweetId == null);
     // Sort tweets by createdAt field in descending order
-    const sortedTweets = tweets ? [...tweets].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) : [];
+    const sortedTweets = displayTweets ? [...displayTweets].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) : [];
 
     return (
         <div className="w-[100%] border border-gray-200">

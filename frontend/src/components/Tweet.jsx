@@ -88,6 +88,7 @@ const Tweet = ( {tweet, onDelete, refreshTweet } ) => {
 
     const commentsHandler = () => {
         try {
+            navigate(`/`)
             navigate(`${userDetails?.username}/status/${tweet?._id}`, {
                 withCredentials: true
                 //reroute to status page !!!
@@ -114,15 +115,19 @@ const Tweet = ( {tweet, onDelete, refreshTweet } ) => {
         }
     }
 
+    const profileClickHandler = () => {
+        navigate(`-1`);
+        navigate(`/profile/${tweet?.userId}`);
+    }
 
     return (
         <div className="border-b border-gray-200 ">
             <div>
                 <div className="flex p-4">
-                    <Avatar facebookId="100008343750912" size="32px" className="rounded-full" />
+                    <Avatar facebookId="100008343750912" size="32px" className="rounded-full hover:cursor-pointer" onClick={profileClickHandler} />
                     <div className="ml-2 w-full">
                         <div className="flex items-center">
-                            <h1 className="font-bold"> {userDetails?.name} </h1>
+                            <h1 className="font-bold" > {userDetails?.name} </h1>
                             <p className="text-gray-500 text-sm ml-2"> {`@${userDetails?.username}  .  ${timeSince(tweet?.createdAt)}`} </p>
                         </div>
                         <div>
