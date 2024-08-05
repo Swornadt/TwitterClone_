@@ -41,7 +41,7 @@ const SignIn = ( {isVisible, onClose}) => {
     }
     return (
         <div className="fixed inset-0 bg-gray-700 bg-opacity-50 backdrop-blur-sm flex justify-center items-center">
-            <div className="w-[30%] flex flex-col">  
+            <div className="lg:w-[30%] flex flex-col">  
                 <div className="bg-gray-950 p-4 rounded-xl grid place-items-center">
                     <button className="text-white text-xl place-self-start"
                             onClick={ () => onClose() }>

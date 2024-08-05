@@ -35,7 +35,7 @@ const SignUp = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
     return (
         <div className="fixed inset-0 bg-gray-700 bg-opacity-50 backdrop-blur-sm flex justify-center items-center">
-            <div className="w-[30%] flex flex-col">  
+            <div className="lg:w-[30%] w-2/3 flex flex-col">  
                 <div className="bg-gray-950 p-4 rounded-xl grid place-items-center">
                     <button className="text-white text-xl place-self-start"
                             onClick={ () => onClose() }>
@@ -43,11 +43,11 @@ const SignUp = ({ isVisible, onClose }) => {
                     </button>
                     <h2 className="font-semibold text-white text-2xl my-4"> Create an Account </h2>
                     <form className="flex flex-col w-[50%]" onSubmit={submitHandler}>
-                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" className=" outline-blue-500 border border-gray-800 px-2 py-1 rounded-full m-1"/>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className=" outline-blue-500 border border-gray-800 px-2 py-1 rounded-full m-1"/>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className=" outline-blue-500 border border-gray-800 px-2 py-1 rounded-full m-1"/>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className=" outline-blue-500 border border-gray-800 px-2 py-1 rounded-full m-1"/>
-                    <button className="bg-[#1D9BFB] border-none py-2 my-4 rounded-full text-lg text-white"> Sign Up </button>
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" className=" outline-blue-500 border border-gray-800 px-2 py-1.5 rounded-full m-1"/>
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className=" outline-blue-500 border border-gray-800 px-2 py-1.5 rounded-full m-1"/>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className=" outline-blue-500 border border-gray-800 px-2 py-1.5 rounded-full m-1"/>
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className=" outline-blue-500 border border-gray-800 px-2 py-1.5 rounded-full m-1"/>
+                    <button className="bg-[#1D9BFB] border-none py-2 my-7 rounded-full text-lg text-white"> Sign Up </button>
                     </form>
                 </div> 
             </div>
