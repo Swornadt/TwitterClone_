@@ -21,51 +21,51 @@ const LeftSideBar = () => {
     const [showModal3, setShowModal3] = useState(false);
 
     return (
-        <div className="w-full flex flex-col">
+        <div className="w-full p-2 mt-2.5 flex">
             <div>
                 <div>
-                    <FaSquareXTwitter className="ml-3" size="42px"/>
+                    <FaSquareXTwitter className="ml-4" size="42px"/>
                 </div>
                 <div className= "my-3">
-                    <Link to="/" className = "flex items-center my-2 px-4 py-1 hover:bg-gray-100 rounded-full">
+                    <Link to="/" className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <GoHomeFill size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Home </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Home </h1>
                     </Link>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <FaMagnifyingGlass size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Explore </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Explore </h1>
                     </div>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <GoBell size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Notifications </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Notifications </h1>
                     </div>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <CiMail size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Messages </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Messages </h1>
                     </div>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <LuSquareSlash size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Grok </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Grok </h1>
                     </div>
-                    <Link to={`/bookmarks/${user?._id}`} className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <Link to={`/bookmarks/${user?._id}`} className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <CiBookmark size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Bookmarks </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Bookmarks </h1>
                     </Link>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <BsPeople size="26px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Communities </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Communities </h1>
                     </div>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <FaXTwitter size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Premium </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Premium </h1>
                     </div>
-                    <Link to={`/profile/${user?._id}`} className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <Link to={`/profile/${user?._id}`} className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <IoPersonOutline size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> Profile </h1>
+                        <h1 className="font-semibold text-xl pl-3"> Profile </h1>
                     </Link>
-                    <div className = "flex items-center my-2 px-4 py-1.5 hover:bg-gray-100 rounded-full">
+                    <div className = "flex items-center my-2 px-4 py-2 hover:bg-gray-100 rounded-full">
                         <BiMessageSquareDots size="28px"/>
-                        <h1 className="font-semibold text-lg pl-3"> More </h1>
+                        <h1 className="font-semibold text-xl pl-3"> More </h1>
                     </div>
                     <button className="px-24 mx-1 py-3 text-md bg-[#1D9BFB] rounded-full text-white font-bold text-lg"> Post </button>
                 </div>
