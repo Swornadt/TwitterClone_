@@ -5,7 +5,9 @@ import { TWEET_API_ENDPOINT } from '../utils/constant';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRefresh, getIsActive } from '../redux/tweetSlice';
+import { getRefresh, getIsActive, getIsModalActive } from '../redux/tweetSlice';
+import { FaSquareXTwitter } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const Post = () => {
     const [description, setDescription] = useState("");
@@ -35,16 +37,26 @@ const Post = () => {
     const followingHandler = () => {
         dispatch(getIsActive(false));
     }
+    const showModalHandler = () => {
+        //console.log("ShowModal called!")
+        dispatch(getIsModalActive(true));
+    }
 
     return (
-        <div className="flex flex-col sticky top-0 backdrop-blur-md">
+        <div className="flex flex-col w-full sticky top-0 backdrop-blur-md">
             <div className="bg-white z-10">
-                <div className="flex items-center justify-evenly border-b border-gray-200">
-                    <div className="cursor-pointer hover:bg-gray-200 w-full text-center">
-                        <h1 onClick={forYouHandler} className={`${isActive ? "border-b-4 border-blue-400" : "border-b-4 border-transparent"} font-semibold text-gray-600 text-lg py-3`}> For You</h1>
+                <div className="flex items-start sm:hidden">
+                    <Avatar facebookId="100008343750912" size="32px" 
+                            className="absolute flex m-1 rounded-full hover:cursor-pointer"
+                            onClick={showModalHandler} />
+                    <FaSquareXTwitter className="mx-auto m-1" size="36px"/>
+                </div>
+                <div className="flex items-center border-b border-gray-200 text-md lg:text-lg">
+                    <div className="flex-grow cursor-pointer hover:bg-gray-200 text-center transition-colors duration-300">
+                        <h1 onClick={forYouHandler} className={`${isActive ? "border-b-4 border-blue-400" : "border-b-4 border-transparent"} font-semibold text-gray-600 py-3 px-2 sm:px-5`}> For You</h1>
                     </div>
-                    <div className="cursor-pointer hover:bg-gray-200 w-full text-center">
-                        <h1 onClick={followingHandler} className={`${!isActive ? "border-b-4 border-blue-400" : "border-b-4 border-transparent" } font-semibold text-gray-600 text-lg py-3`}> Following </h1>
+                    <div className="flex-grow cursor-pointer hover:bg-gray-200 text-center transition-colors duration-300">
+                        <h1 onClick={followingHandler} className={`${!isActive ? "border-b-4 border-blue-400" : "border-b-4 border-transparent" } font-semibold text-gray-600 py-3`}> Following </h1>
                     </div>
                 </div>
             </div>

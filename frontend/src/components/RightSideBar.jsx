@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const RightSideBar = ( {otherUsers} ) => {
     return (
-        <div className="w-[100%] p-2">
+        <div className="w-[100] z-10">
             <div className="flex items-center p-2 bg-gray-100 rounded-full outline-none w-full">
                 <CiSearch size="24px"/>
                 <input type="text" className="bg-transparent outline-none px-2" placeholder="Search"/>
